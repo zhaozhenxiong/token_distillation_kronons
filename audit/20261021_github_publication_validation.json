@@ -1,0 +1,36 @@
+{
+  "schema": "publication_validation_audit_v1",
+  "date": "2026-10-21",
+  "linked_khquant_audit_session": "20261019-134115-83f5b455",
+  "scope": "source_only_github_release_validation",
+  "synthetic_regression": {
+    "passed": 186,
+    "skipped_optional_jsonschema_check": 1,
+    "subtests_passed": 56,
+    "isolated_allowlisted_checkout_same_result": true
+  },
+  "original_ict_tests_passed": 5,
+  "checks": {
+    "all_pinned_ict_sha256_match": true,
+    "public_file_sensitive_pattern_scan_findings": 0,
+    "markdown_file_links_resolve": true,
+    "python_and_toml_parse": true,
+    "train_plan_reports_training_started_false": true
+  },
+  "release_archive": "allowlisted_source_only;file_sha256_manifest_embedded",
+  "external_source_access_for_this_validation": "synthetic_fixtures_only;no_real_db_or_official_weight_load",
+  "real_training_or_dataset_generation_started": false,
+  "official_base_or_tokenizer_copied": false,
+  "model_promoted": false,
+  "publication_status": "validated_before_push",
+  "concurrent_workspace_extension": {
+    "files": [
+      "configs/active800.toml",
+      "scripts/select_active_population.py",
+      "scripts/run_active_study.py",
+      "tests/test_active_population.py"
+    ],
+    "scope": "included_as_experimental_source_only;selection_synthetic_tests_passed;no_800_stock_completion_claim",
+    "other_execution_state_not_changed": true
+  }
+}

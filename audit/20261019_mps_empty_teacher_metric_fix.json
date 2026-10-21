@@ -1,0 +1,33 @@
+{
+  "schema": "implementation_audit_v1",
+  "date": "2026-10-19",
+  "khquant_audit_session": "20261019-134115-83f5b455",
+  "scope": "MPS_empty_teacher_metric_correction",
+  "failure": {
+    "experiment": "artifacts/runs/ablation_20261019_v1",
+    "observed_by_parent_agent": "MPS rejected empty binary_cross_entropy buffers during initial evaluation of the continuous-only native CZSC teacher",
+    "optimizer_started_in_failed_run": false,
+    "failed_artifacts_preserved": true
+  },
+  "changes": [
+    "Skip BCE kernels, rate tensor arithmetic and empty mask reductions when the valid event count is zero.",
+    "Skip masked continuous metric reductions when a batch or individual column has no known targets.",
+    "Use a differentiable zero from the nonempty origin for absent event objectives.",
+    "Regression check rejects any BCE invocation when all event masks are unknown or have zero columns."
+  ],
+  "validation": {
+    "synthetic_tests_command": "PYTHONPATH=src ../KHQuant/.venv/bin/python -m pytest -q tests/test_runtime.py tests/test_models.py",
+    "passed": 33,
+    "subtests_passed": 37,
+    "synthetic_MPS_evaluation": {
+      "samples": 3,
+      "native_CZSC_event_requested": 0,
+      "native_CZSC_event_valid": 0,
+      "native_CZSC_event_BCE": null,
+      "optimizer_steps": 0,
+      "completed": true
+    }
+  },
+  "external_sources_modified": false,
+  "model_promoted": false
+}

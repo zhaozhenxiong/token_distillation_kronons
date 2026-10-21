@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Window local native confirmed CZSC daily facts",
+  "type": "object",
+  "required": ["schema", "schema_sha256", "symbol", "as_of", "context_start", "context_end", "context_rows", "available_at", "dependency_start", "dependency_end", "continuous_names", "continuous_targets", "continuous_mask", "event_names", "event_targets", "event_mask", "target_metadata", "native_config", "quality", "calendar_identity", "code_identity"],
+  "properties": {
+    "schema": {"const": "czsc_native_window_local_confirmed_daily_teacher_v1"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "continuous_names": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "string"}},
+    "continuous_targets": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": ["number", "null"]}},
+    "continuous_mask": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "boolean"}},
+    "event_names": {"type": "array", "maxItems": 0},
+    "event_targets": {"type": "array", "maxItems": 0},
+    "event_mask": {"type": "array", "maxItems": 0},
+    "target_metadata": {"type": "object", "minProperties": 16},
+    "quality": {
+      "type": "object",
+      "required": ["native_czsc_facts", "window_local_state_reset", "full_history_equivalence", "formal_qualified"],
+      "properties": {
+        "native_czsc_facts": {"const": true},
+        "window_local_state_reset": {"const": true},
+        "full_history_equivalence": {"const": false},
+        "formal_qualified": {"const": false}
+      }
+    }
+  },
+  "$comment": "Historical facts only. Native replay and dataset validation enforce source identity, exact student context, masks, dependencies and confirmation timestamps. Student head estimates do not satisfy this fact contract."
+}

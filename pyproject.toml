@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "token-distillation"
+version = "0.1.0"
+description = "Causal offline CZSC and ICT knowledge distillation for a Kronos student"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "pandas>=2.2"]
+
+[project.optional-dependencies]
+model = ["torch>=2.6", "safetensors", "tqdm"]
+dev = ["pytest>=8"]
+plots = ["matplotlib"]
+
+[project.urls]
+Repository = "https://github.com/zhaozhenxiong/token_distillation_kronons"
+Documentation = "https://github.com/zhaozhenxiong/token_distillation_kronons/blob/main/docs/distillation_guide.md"
+
+[project.scripts]
+token-distillation = "token_distillation.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

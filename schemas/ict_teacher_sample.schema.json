@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Causal ICT atomic teacher sample",
+  "type": "object",
+  "required": ["schema", "symbol", "as_of", "context_start", "context_end", "context_rows", "available_at", "continuous_names", "continuous_targets", "continuous_mask", "event_names", "event_targets", "event_mask", "pending_targets", "target_metadata", "provenance"],
+  "properties": {
+    "schema": {"const": "ict_causal_atomic_teacher_v1"},
+    "continuous_names": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+    "continuous_targets": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": ["number", "null"]}},
+    "continuous_mask": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "boolean"}},
+    "event_names": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}},
+    "event_targets": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": ["number", "null"]}},
+    "event_mask": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "boolean"}},
+    "pending_targets": {"type": "object", "additionalProperties": {"type": "object", "required": ["target", "mask", "reason"], "properties": {"target": {"const": null}, "mask": {"const": false}, "reason": {"type": "string"}}}}
+  },
+  "$comment": "Atomic targets only. No complete ICT setup, MSS/BOS classification, session, or multi-timeframe qualification is implied."
+}

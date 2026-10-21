@@ -1,0 +1,19 @@
+{
+  "schema": "frozen_ict_upstream_v1",
+  "repository": "https://github.com/carreypro/ict-trading-model",
+  "commit": "7162437e28b1f59a4b25ea88615ee99902c9cc75",
+  "archive_sha256": "90e3003e645ccfe1b169ee6517e28d65f715cab11207e6ec7af083c1f7c18594",
+  "license": "MIT",
+  "files": {
+    ".github/workflows/test.yml": "39b4ad6cd72281262c7df3841072305873bfe09813d02eaaf93b4147a56e5885",
+    ".gitignore": "33d6b396ea484467ca87acdb4168f71e045e5198dc6a7ad7ee4259c095263872",
+    "LICENSE": "62309d51d112e4550038d33ad030c0e4bd541af8eb9d1177f273697627ea0663",
+    "README.md": "550b8cd4ecfca232c46e081d70e8629b94ea42d8f769ca3533cf086af67ca66e",
+    "SKILL.md": "67ded500e9b0912a847d637142c71a4bb4d49514d47f7f3974b0deb19bf62f61",
+    "agents/openai.yaml": "0b3d895360bf6120f92ae6542330c9ced500cc98d681d5e6cce157d386b9f5fc",
+    "references/ict-model.md": "034d3168176cfe04ae98407db11420eaefe34112eabe56cee48a5ec127ba965c",
+    "references/output-contract.md": "02df18ad14ff2ec7744ec37042e00762c83db29a9d33bfb3620ee0dc54b7ed52",
+    "scripts/ict_scan.py": "e47249ea426d8b513c3e82e9e5cacaee77429424c269a225df3f0383a49802b5",
+    "tests/test_ict_scan.py": "8b392ba0963290b71030f177401c9dfee38764882f86ce9294e3faf14996fb6d"
+  }
+}

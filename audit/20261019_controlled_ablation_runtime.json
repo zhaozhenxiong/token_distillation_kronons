@@ -1,0 +1,27 @@
+{
+  "schema": "implementation_audit_v1",
+  "date": "2026-10-19",
+  "khquant_audit_session": "20261019-134115-83f5b455",
+  "scope": "controlled_ablation_runtime_and_synthetic_component_checks",
+  "changed_files": [
+    "src/token_distillation/training/runner.py",
+    "tests/test_runtime.py"
+  ],
+  "facts": [
+    "Four teacher modes retain identical student heads and common AR/direction objectives.",
+    "Active teacher arms share a total auxiliary objective weight of 0.6 by default; dual divides this budget between CZSC and ICT.",
+    "Zero-weight objectives are excluded from the autograd total so inactive teacher heads retain None gradients and avoid AdamW weight decay.",
+    "Tune direction LogLoss alone selects checkpoints, including the initialized step-zero candidate.",
+    "Training records initialization and consumed-sample-order hashes, initial/final/selected train-only diagnostics, shared-LoRA gradient cosines and parameter movement.",
+    "Evaluation records masked teacher reconstruction metrics against train-fitted constant baselines, direction confusion and per-row LogLoss.",
+    "Synthetic checks do not start an optimizer loop, load real assets, access external data, or promote models."
+  ],
+  "validation": {
+    "command": "PYTHONPATH=src ../KHQuant/.venv/bin/python -m pytest -q tests/test_runtime.py",
+    "passed": 14,
+    "failed": 0,
+    "training_started": false
+  },
+  "external_sources_modified": false,
+  "model_promoted": false
+}

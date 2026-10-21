@@ -1,0 +1,26 @@
+{
+  "schema": "token_distillation_change_audit_v1",
+  "date": "2026-10-19",
+  "linked_khquant_audit_session": "20261019-134115-83f5b455",
+  "scope": "Offline official Kronos LoRA training and chronological evaluation components",
+  "implemented": [
+    "Pinned local official model/tokenizer and frozen vendor source identities, isolated lazy imports with source bytecode disabled",
+    "Frozen tokenizer exact prefix invariance verification before fitting or evaluation",
+    "Origin-only direction and W32/ICT/native CZSC internal heads; continuous-only native CZSC head supported",
+    "Future-only shifted AR s1 and causal s2 objectives plus train-only scaled masked Huber/BCE and frozen original-backbone KL",
+    "Explicit new-candidate optimizer execution guarded by execution_enabled; tune-only checkpoint selection",
+    "Actual LoRA/head/optimizer checkpoint without copying official base or tokenizer tensors",
+    "Exact dataset/config/schema/assets/runtime binding checks on reload",
+    "Separate tune/calibration/policy/holdout evaluation with global valid-element loss denominators and train direction-prior/frozen-token baselines"
+  ],
+  "validation": {
+    "command": "PYTHONPATH=src ../KHQuant/.venv/bin/python -m pytest -q tests/test_runtime.py tests/test_models.py",
+    "result": "28 passed, 37 subtests passed",
+    "new_runtime_tests_start_training_optimizer": false,
+    "new_runtime_tests_use_real_data_or_vendor_imports": false,
+    "checks": ["future perturbation cannot alter causal s2 prefix or origin heads", "masked evaluation losses invariant to batch composition", "adapter save/load excludes base tensors", "explicit unavailable MPS/CUDA raises", "continuous-only heads and unknown target denominators"]
+  },
+  "limitations": ["No optimizer resume, standalone merged export, calibration fitting, trading policy or backtest implemented", "Small pilot completion does not establish model quality or authorize promotion"],
+  "real_data_training_or_evaluation_in_this_component_audit": false,
+  "external_sources_modified": false
+}

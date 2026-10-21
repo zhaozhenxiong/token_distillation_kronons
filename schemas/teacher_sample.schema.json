@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Window local W32 teacher sample",
+  "type": "object",
+  "required": ["schema", "schema_sha256", "symbol", "as_of", "available_at", "dependency_start", "dependency_end", "continuous_names", "continuous_targets", "continuous_mask", "event_names", "event_targets", "event_mask", "structure_mask", "quality", "calendar_identity", "code_identity"],
+  "properties": {
+    "schema": {"const": "khquant_window_local_w32_teacher_v1"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "continuous_names": {"type": "array", "minItems": 25, "maxItems": 25, "items": {"type": "string"}},
+    "continuous_targets": {"type": "array", "minItems": 25, "maxItems": 25, "items": {"type": ["number", "null"]}},
+    "continuous_mask": {"type": "array", "minItems": 25, "maxItems": 25, "items": {"type": "boolean"}},
+    "event_targets": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": ["number", "null"]}},
+    "event_mask": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "boolean"}},
+    "structure_mask": {"type": "array", "minItems": 22, "maxItems": 22, "items": {"const": false}},
+    "structure_status": {"const": "pending_native_structure_adapter"}
+  },
+  "$comment": "Runtime dataclasses and adapters also validate time, mask, provenance, and matching dimensions; JSON Schema alone does not establish causality."
+}

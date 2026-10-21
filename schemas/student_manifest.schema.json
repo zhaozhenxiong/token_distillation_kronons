@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Future student package identity contract",
+  "type": "object",
+  "required": ["schema", "model_id", "status", "base_sha256", "tokenizer_sha256", "teacher_schema_sha256", "config_sha256", "dataset_index_sha256", "merged_weights_sha256", "heads_sha256", "frozen_at", "qualification"],
+  "properties": {
+    "schema": {"const": "distilled_kronos_student_v1"},
+    "model_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["candidate", "historical_research", "shadow"]},
+    "base_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tokenizer_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "merged_weights_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "heads_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "qualification": {"type": "object", "required": ["status"], "properties": {"status": {"enum": ["pending", "failed", "passed_with_evidence"]}}}
+  },
+  "$comment": "Package writing/loading, calibration linkage, forward eligibility, and export acceptance remain to implement. A schema file is not a trained model."
+}

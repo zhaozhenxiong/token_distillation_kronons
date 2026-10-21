@@ -1,0 +1,1700 @@
+{
+  "schema": "public_completed_ablation240_summary_v1",
+  "experiment_date": "2026-10-21",
+  "status": "completed",
+  "scope": "retrospective_local_research; aggregate_only; not_standalone_reproduction_evidence",
+  "population": {
+    "frozen_pool": 240,
+    "stage_rows": {
+      "train": 16611,
+      "tune": 3649,
+      "calibration": 1633,
+      "policy": 2510,
+      "holdout": 5326
+    },
+    "stage_symbol_counts": [
+      239,
+      231,
+      238,
+      230,
+      237
+    ],
+    "holdout_origin_dates": 24,
+    "holdout_first_origin": "2026-04-08",
+    "holdout_last_origin": "2026-09-22",
+    "last_label_mature_date": "2026-09-30"
+  },
+  "protocol": {
+    "context_length": 128,
+    "horizon": 5,
+    "stride": 5,
+    "arms": [
+      "none",
+      "czsc",
+      "ict",
+      "dual"
+    ],
+    "seeds": [
+      42,
+      123,
+      2026
+    ],
+    "max_steps_per_fit": 8306,
+    "selected_steps_all_fits": 4154,
+    "batch_size": 4,
+    "evaluation_batch_size": 32,
+    "total_optimizer_updates": 99672,
+    "selection": "tune_direction_log_loss;includes_initialization",
+    "base_kl": 0,
+    "auxiliary_budget_per_teacher_arm": 0.6
+  },
+  "holdout": {
+    "arms": {
+      "none": {
+        "log_loss": {
+          "mean": 0.9280665515142567,
+          "std_across_seeds": 0.0038880840627439767,
+          "values": [
+            0.932381747858353,
+            0.9248358699051512,
+            0.9269820367792657
+          ],
+          "seed_count": 3
+        },
+        "brier": {
+          "mean": 0.5842062950533654,
+          "std_across_seeds": 0.004277606410478627,
+          "values": [
+            0.5889138801431361,
+            0.5805575513241127,
+            0.5831474536928474
+          ],
+          "seed_count": 3
+        },
+        "accuracy": {
+          "mean": 0.45293528601827515,
+          "std_across_seeds": 0.00837437911311942,
+          "values": [
+            0.44667668043559894,
+            0.4496808111152835,
+            0.46244836650394294
+          ],
+          "seed_count": 3
+        }
+      },
+      "czsc": {
+        "log_loss": {
+          "mean": 0.9279892037031994,
+          "std_across_seeds": 0.0038885165730523155,
+          "values": [
+            0.9323416086416523,
+            0.9248574963529282,
+            0.9267685061150173
+          ],
+          "seed_count": 3
+        },
+        "brier": {
+          "mean": 0.5841764690679936,
+          "std_across_seeds": 0.004255547437767676,
+          "values": [
+            0.5888934203072881,
+            0.5806253232300213,
+            0.5830106636666714
+          ],
+          "seed_count": 3
+        },
+        "accuracy": {
+          "mean": 0.45312304418575544,
+          "std_across_seeds": 0.008664044301250316,
+          "values": [
+            0.44686443860307923,
+            0.44949305294780323,
+            0.46301164100638376
+          ],
+          "seed_count": 3
+        }
+      },
+      "ict": {
+        "log_loss": {
+          "mean": 0.9276914106271859,
+          "std_across_seeds": 0.004069730930507921,
+          "values": [
+            0.9322407922606465,
+            0.9243968889854747,
+            0.9264365506354364
+          ],
+          "seed_count": 3
+        },
+        "brier": {
+          "mean": 0.5839417779314399,
+          "std_across_seeds": 0.004381047224389553,
+          "values": [
+            0.5887931279102131,
+            0.5802743794140793,
+            0.582757826470027
+          ],
+          "seed_count": 3
+        },
+        "accuracy": {
+          "mean": 0.45437476530229065,
+          "std_across_seeds": 0.009516579720220963,
+          "values": [
+            0.44686443860307923,
+            0.4511828764551258,
+            0.46507698084866694
+          ],
+          "seed_count": 3
+        }
+      },
+      "dual": {
+        "log_loss": {
+          "mean": 0.927948114847411,
+          "std_across_seeds": 0.0039495190803163485,
+          "values": [
+            0.932365488966016,
+            0.9247576918826879,
+            0.9267211636935293
+          ],
+          "seed_count": 3
+        },
+        "brier": {
+          "mean": 0.5841407914306226,
+          "std_across_seeds": 0.004306583399776862,
+          "values": [
+            0.5889108383896864,
+            0.5805385376583857,
+            0.582972998243796
+          ],
+          "seed_count": 3
+        },
+        "accuracy": {
+          "mean": 0.45324821629740897,
+          "std_across_seeds": 0.00933707604893456,
+          "values": [
+            0.4459256477656778,
+            0.4500563274502441,
+            0.4637626736763049
+          ],
+          "seed_count": 3
+        }
+      }
+    },
+    "prior_log_loss": 0.9081537334016903,
+    "prior_brier": 0.5658310648936951,
+    "actual_class_counts": [
+      2636,
+      407,
+      2283
+    ],
+    "train_prior": [
+      0.4803779944625015,
+      0.07860840255206453,
+      0.44101360298543396
+    ],
+    "comparisons": {
+      "czsc": {
+        "log_loss": {
+          "mean": -7.734781105752843e-05,
+          "std_across_seeds": 0.00012191421760618131,
+          "values": [
+            -4.013921670080714e-05,
+            2.162644777678296e-05,
+            -0.00021353066424856113
+          ],
+          "seed_count": 3,
+          "lower_is_better": true,
+          "improved_seed_count": 2,
+          "date_block_uncertainty": {
+            "mean": -7.734781105752843e-05,
+            "date_clusters": 24,
+            "row_count": 5326,
+            "seed_count": 3,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00028225638819320267,
+              0.00017932766920564176
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "date_block_sensitivity": {
+            "2": {
+              "mean": -7.734781105752843e-05,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 2,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.00028225638819320267,
+                0.00017932766920564176
+              ],
+              "approximate_nonoverlapping_blocks": 12.0,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            },
+            "5": {
+              "mean": -7.734781105752843e-05,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 5,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.00028686945771534456,
+                0.00013742568191984193
+              ],
+              "approximate_nonoverlapping_blocks": 4.8,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            }
+          }
+        },
+        "brier": {
+          "mean": -2.9825985371796534e-05,
+          "std_across_seeds": 0.00010260209345912238,
+          "values": [
+            -2.0459835848086608e-05,
+            6.777190590851645e-05,
+            -0.00013679002617581946
+          ],
+          "seed_count": 3,
+          "lower_is_better": true,
+          "improved_seed_count": 2,
+          "date_block_uncertainty": {
+            "mean": -2.9825985371796534e-05,
+            "date_clusters": 24,
+            "row_count": 5326,
+            "seed_count": 3,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00021156800987014252,
+              0.00019654538871616544
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "date_block_sensitivity": {
+            "2": {
+              "mean": -2.9825985371796534e-05,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 2,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.00021156800987014252,
+                0.00019654538871616544
+              ],
+              "approximate_nonoverlapping_blocks": 12.0,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            },
+            "5": {
+              "mean": -2.9825985371796534e-05,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 5,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.0002284589481443216,
+                0.00017624802166502172
+              ],
+              "approximate_nonoverlapping_blocks": 4.8,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            }
+          }
+        }
+      },
+      "ict": {
+        "log_loss": {
+          "mean": -0.0003751408870709602,
+          "std_across_seeds": 0.00020968524747572154,
+          "values": [
+            -0.00014095559770660842,
+            -0.0004389809196767719,
+            -0.0005454861438295002
+          ],
+          "seed_count": 3,
+          "lower_is_better": true,
+          "improved_seed_count": 3,
+          "date_block_uncertainty": {
+            "mean": -0.0003751408870709602,
+            "date_clusters": 24,
+            "row_count": 5326,
+            "seed_count": 3,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.0007285108701614062,
+              4.466228052987918e-05
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "date_block_sensitivity": {
+            "2": {
+              "mean": -0.0003751408870709602,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 2,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.0007285108701614062,
+                4.466228052987918e-05
+              ],
+              "approximate_nonoverlapping_blocks": 12.0,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            },
+            "5": {
+              "mean": -0.0003751408870709602,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 5,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.0006784289104873183,
+                -3.863565650452866e-05
+              ],
+              "approximate_nonoverlapping_blocks": 4.8,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            }
+          }
+        },
+        "brier": {
+          "mean": -0.0002645171219255061,
+          "std_across_seeds": 0.00013540472993058176,
+          "values": [
+            -0.00012075223292295309,
+            -0.0002831719100333579,
+            -0.00038962722282020736
+          ],
+          "seed_count": 3,
+          "lower_is_better": true,
+          "improved_seed_count": 3,
+          "date_block_uncertainty": {
+            "mean": -0.0002645171219255061,
+            "date_clusters": 24,
+            "row_count": 5326,
+            "seed_count": 3,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.0005830597724625792,
+              9.267192569478899e-05
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "date_block_sensitivity": {
+            "2": {
+              "mean": -0.0002645171219255061,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 2,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.0005830597724625792,
+                9.267192569478899e-05
+              ],
+              "approximate_nonoverlapping_blocks": 12.0,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            },
+            "5": {
+              "mean": -0.0002645171219255061,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 5,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.0005762132557967896,
+                5.818646003425302e-05
+              ],
+              "approximate_nonoverlapping_blocks": 4.8,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            }
+          }
+        }
+      },
+      "dual": {
+        "log_loss": {
+          "mean": -0.00011843666684569084,
+          "std_across_seeds": 0.00012717938016332245,
+          "values": [
+            -1.6258892337068077e-05,
+            -7.817802246353338e-05,
+            -0.00026087308573647104
+          ],
+          "seed_count": 3,
+          "lower_is_better": true,
+          "improved_seed_count": 3,
+          "date_block_uncertainty": {
+            "mean": -0.00011843666684569084,
+            "date_clusters": 24,
+            "row_count": 5326,
+            "seed_count": 3,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00033207104011435837,
+              0.00015130658703893963
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "date_block_sensitivity": {
+            "2": {
+              "mean": -0.00011843666684569084,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 2,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.00033207104011435837,
+                0.00015130658703893963
+              ],
+              "approximate_nonoverlapping_blocks": 12.0,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            },
+            "5": {
+              "mean": -0.00011843666684569084,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 5,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.0003207070281257045,
+                0.00010528639140930108
+              ],
+              "approximate_nonoverlapping_blocks": 4.8,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            }
+          }
+        },
+        "brier": {
+          "mean": -6.550362274272268e-05,
+          "std_across_seeds": 9.469240115998021e-05,
+          "values": [
+            -3.041753449708938e-06,
+            -1.9013665727080744e-05,
+            -0.00017445544905137837
+          ],
+          "seed_count": 3,
+          "lower_is_better": true,
+          "improved_seed_count": 3,
+          "date_block_uncertainty": {
+            "mean": -6.550362274272268e-05,
+            "date_clusters": 24,
+            "row_count": 5326,
+            "seed_count": 3,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00025786492121545766,
+              0.00017530547998506884
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "date_block_sensitivity": {
+            "2": {
+              "mean": -6.550362274272268e-05,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 2,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.00025786492121545766,
+                0.00017530547998506884
+              ],
+              "approximate_nonoverlapping_blocks": 12.0,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            },
+            "5": {
+              "mean": -6.550362274272268e-05,
+              "date_clusters": 24,
+              "row_count": 5326,
+              "seed_count": 3,
+              "block_length_origins": 5,
+              "resamples": 2000,
+              "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+              "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+              "all_symbols_and_seeds_share_resampled_date_sequence": true,
+              "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+              "nominal_interval": 0.95,
+              "ci95": [
+                -0.00025567931177275397,
+                0.00014878137698690915
+              ],
+              "approximate_nonoverlapping_blocks": 4.8,
+              "adequate_independent_block_support": false,
+              "formal_significance_or_generalization_claim": false,
+              "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+            }
+          }
+        }
+      }
+    }
+  },
+  "teacher_acquisition_dual": {
+    "czsc": {
+      "continuous_mae_normalized_minus_constant": {
+        "mean": -0.11673042628739379,
+        "std_across_seeds": 0.0026748817370942403,
+        "values": [
+          -0.11435772431058389,
+          -0.11962929189015159,
+          -0.1162042626614459
+        ],
+        "seed_count": 3
+      },
+      "continuous_mae_normalized_minus_train_median": {
+        "mean": -0.07430529482430843,
+        "std_across_seeds": 0.0026748817370942403,
+        "values": [
+          -0.07193259284749853,
+          -0.07720416042706624,
+          -0.07377913119836055
+        ],
+        "seed_count": 3
+      },
+      "event_bce_minus_constant": {
+        "mean": null,
+        "std_across_seeds": null,
+        "values": [],
+        "seed_count": 0
+      },
+      "continuous_mae_normalized_minus_matched_no_teacher_head": {
+        "mean": -0.1449849470902683,
+        "std_across_seeds": 0.015387061887328532,
+        "values": [
+          -0.15397366063876528,
+          -0.12721791368009672,
+          -0.15376326695194287
+        ],
+        "seed_count": 3
+      },
+      "event_bce_minus_matched_no_teacher_head": {
+        "mean": null,
+        "std_across_seeds": null,
+        "values": [],
+        "seed_count": 0
+      },
+      "lower_is_better": true,
+      "semantics": "student_internal_reconstruction_of_known_origin_facts; not_future_trade_labels",
+      "uncertainty": "seed_SD_only; per_row_teacher_predictions_are_not_stored_for_date_block_intervals",
+      "checkpoint_scope": "tune_direction_selected_checkpoint; includes_step_zero_if_selected",
+      "optimizer_learning_failure_attribution": false
+    },
+    "w32": {
+      "continuous_mae_normalized_minus_constant": {
+        "mean": -0.1742419579483568,
+        "std_across_seeds": 0.0029121323799483454,
+        "values": [
+          -0.17407343348903975,
+          -0.1714177472748748,
+          -0.1772346930811558
+        ],
+        "seed_count": 3
+      },
+      "continuous_mae_normalized_minus_train_median": {
+        "mean": -0.11250906508724373,
+        "std_across_seeds": 0.0029121323799483454,
+        "values": [
+          -0.1123405406279267,
+          -0.10968485441376175,
+          -0.11550180022004275
+        ],
+        "seed_count": 3
+      },
+      "event_bce_minus_constant": {
+        "mean": -0.01192099820819559,
+        "std_across_seeds": 0.00022230752608508311,
+        "values": [
+          -0.011824410734261714,
+          -0.011763321604910892,
+          -0.012175262285414164
+        ],
+        "seed_count": 3
+      },
+      "continuous_mae_normalized_minus_matched_no_teacher_head": {
+        "mean": -0.21500702532220442,
+        "std_across_seeds": 0.013923883290990138,
+        "values": [
+          -0.19962502513041275,
+          -0.21864585581702167,
+          -0.2267501950191788
+        ],
+        "seed_count": 3
+      },
+      "event_bce_minus_matched_no_teacher_head": {
+        "mean": -0.6429335434507822,
+        "std_across_seeds": 0.03869798523846331,
+        "values": [
+          -0.6206985144513673,
+          -0.6204841594407567,
+          -0.6876179564602225
+        ],
+        "seed_count": 3
+      },
+      "lower_is_better": true,
+      "semantics": "student_internal_reconstruction_of_known_origin_facts; not_future_trade_labels",
+      "uncertainty": "seed_SD_only; per_row_teacher_predictions_are_not_stored_for_date_block_intervals",
+      "checkpoint_scope": "tune_direction_selected_checkpoint; includes_step_zero_if_selected",
+      "optimizer_learning_failure_attribution": false
+    },
+    "ict": {
+      "continuous_mae_normalized_minus_constant": {
+        "mean": -0.21908878306199267,
+        "std_across_seeds": 0.007869637826527585,
+        "values": [
+          -0.21000552145096046,
+          -0.22340244808087534,
+          -0.22385837965414218
+        ],
+        "seed_count": 3
+      },
+      "continuous_mae_normalized_minus_train_median": {
+        "mean": -0.2057015968067355,
+        "std_across_seeds": 0.007869637826527585,
+        "values": [
+          -0.19661833519570332,
+          -0.2100152618256182,
+          -0.21047119339888504
+        ],
+        "seed_count": 3
+      },
+      "event_bce_minus_constant": {
+        "mean": -0.03318265221449134,
+        "std_across_seeds": 0.0007258440299303891,
+        "values": [
+          -0.03315651314428025,
+          -0.03392121269891463,
+          -0.03247023080027914
+        ],
+        "seed_count": 3
+      },
+      "continuous_mae_normalized_minus_matched_no_teacher_head": {
+        "mean": -0.23158280867959666,
+        "std_across_seeds": 0.06131669431643366,
+        "values": [
+          -0.1930319507275136,
+          -0.19942759975113905,
+          -0.30228887556013734
+        ],
+        "seed_count": 3
+      },
+      "event_bce_minus_matched_no_teacher_head": {
+        "mean": -0.46468033845102247,
+        "std_across_seeds": 0.05502177001115303,
+        "values": [
+          -0.510947185398894,
+          -0.4038384367488833,
+          -0.4792553932052901
+        ],
+        "seed_count": 3
+      },
+      "lower_is_better": true,
+      "semantics": "student_internal_reconstruction_of_known_origin_facts; not_future_trade_labels",
+      "uncertainty": "seed_SD_only; per_row_teacher_predictions_are_not_stored_for_date_block_intervals",
+      "checkpoint_scope": "tune_direction_selected_checkpoint; includes_step_zero_if_selected",
+      "optimizer_learning_failure_attribution": false
+    }
+  },
+  "mechanism80": {
+    "rows": 1813,
+    "symbols": 80,
+    "origin_dates": 24,
+    "seed": 42,
+    "direction": {
+      "none": {
+        "log_loss": 0.9408508352198781,
+        "brier": 0.5899390986820171,
+        "accuracy": 0.45890788747931605
+      },
+      "czsc": {
+        "log_loss": 0.9410072201386992,
+        "brier": 0.5900442540673734,
+        "accuracy": 0.45890788747931605
+      },
+      "ict": {
+        "log_loss": 0.9403854860208987,
+        "brier": 0.5896448855850694,
+        "accuracy": 0.46056260341974625
+      },
+      "dual": {
+        "log_loss": 0.9409205910631694,
+        "brier": 0.5899964771610546,
+        "accuracy": 0.45890788747931605
+      },
+      "dual_shuffled": {
+        "log_loss": 0.9409209095732609,
+        "brier": 0.5899990416613383,
+        "accuracy": 0.4578047435190292
+      },
+      "heads_only": {
+        "log_loss": 0.929158362416198,
+        "brier": 0.5815479140943979,
+        "accuracy": 0.4594594594594595
+      },
+      "dual_repeat": {
+        "log_loss": 0.9409205910631694,
+        "brier": 0.5899964771610546,
+        "accuracy": 0.45890788747931605
+      }
+    },
+    "paired_comparisons": {
+      "czsc_minus_none": {
+        "log_loss": {
+          "block2": {
+            "mean": 0.00015638491882095142,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -8.529138687348166e-05,
+              0.00038287660434949117
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 0.00015638491882095142,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -7.322497782895122e-05,
+              0.0003783858128554387
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": 0.00010515538535639663,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.0001049064892292114,
+              0.0003224643185642357
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 0.00010515538535639663,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -9.74159504180247e-05,
+              0.0003503033544653731
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      },
+      "ict_minus_none": {
+        "log_loss": {
+          "block2": {
+            "mean": -0.0004653491989795674,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.0007436321526835502,
+              -0.0001861241834158762
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": -0.0004653491989795674,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.000687076415195193,
+              -0.00022476033795153152
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": -0.0002942130969475966,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.0005454652743985608,
+              -3.997741445558724e-05
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": -0.0002942130969475966,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.0005010403873838192,
+              -3.68251293857975e-05
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      },
+      "dual_minus_none": {
+        "log_loss": {
+          "block2": {
+            "mean": 6.975584329130675e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00014033603871026548,
+              0.00028767511355838946
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 6.975584329130675e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -9.264362959780777e-05,
+              0.000252349497367982
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": 5.7378479037715676e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00012463475500937036,
+              0.00025970899537853566
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 5.7378479037715676e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -7.93958505217753e-05,
+              0.0002706578280139619
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      },
+      "dual_shuffled_minus_none": {
+        "log_loss": {
+          "block2": {
+            "mean": 7.007435338274701e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00020037450074661124,
+              0.00034861223717422496
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 7.007435338274701e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00018752196020970616,
+              0.00035641993141765006
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": 5.994297932124359e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00018938824575685911,
+              0.00031636407036327523
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 5.994297932124359e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00016064811646216817,
+              0.000329565374187557
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      },
+      "heads_only_minus_none": {
+        "log_loss": {
+          "block2": {
+            "mean": -0.01169247280368025,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.04610163746506414,
+              0.030148899028647126
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": -0.01169247280368025,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.053997823504642536,
+              0.02926293105682103
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": -0.00839118458761922,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.04024415015903597,
+              0.03001537409283562
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": -0.00839118458761922,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.048878537377458335,
+              0.030533003349662514
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      },
+      "dual_repeat_minus_none": {
+        "log_loss": {
+          "block2": {
+            "mean": 6.975584329130675e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00014033603871026548,
+              0.00028767511355838946
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 6.975584329130675e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -9.264362959780777e-05,
+              0.000252349497367982
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": 5.7378479037715676e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00012463475500937036,
+              0.00025970899537853566
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 5.7378479037715676e-05,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -7.93958505217753e-05,
+              0.0002706578280139619
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      },
+      "dual_minus_dual_shuffled": {
+        "log_loss": {
+          "block2": {
+            "mean": -3.1851009144024603e-07,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00014405844897725056,
+              0.00015121895011522933
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": -3.1851009144024603e-07,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00015746296420043768,
+              0.00016099531116041323
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": -2.564500283527908e-06,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00011334852122970808,
+              0.00011952350220439466
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": -2.564500283527908e-06,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.00011455669569130032,
+              0.000139986829342967
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      },
+      "dual_minus_heads_only": {
+        "log_loss": {
+          "block2": {
+            "mean": 0.011762228646971556,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.03020401609322958,
+              0.046225129357449345
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 0.011762228646971556,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.029356813738008157,
+              0.054309169314393925
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": 0.008448563066656938,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.030130364607823066,
+              0.04041698536022299
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 0.008448563066656938,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              -0.03058637010702612,
+              0.049044078876869984
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      },
+      "dual_minus_dual_repeat": {
+        "log_loss": {
+          "block2": {
+            "mean": 0.0,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 0.0,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        },
+        "brier": {
+          "block2": {
+            "mean": 0.0,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 2,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "approximate_nonoverlapping_blocks": 12.0,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          },
+          "block5": {
+            "mean": 0.0,
+            "date_clusters": 24,
+            "row_count": 1813,
+            "seed_count": 1,
+            "block_length_origins": 5,
+            "resamples": 2000,
+            "method": "paired_non_circular_moving_origin_date_block_percentile_bootstrap",
+            "estimand": "mean_of_seed_specific_row_mean_loss_differences",
+            "all_symbols_and_seeds_share_resampled_date_sequence": true,
+            "seed_uncertainty": "conditional_on_fixed_seed_set; see separately reported seed SD",
+            "nominal_interval": 0.95,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "approximate_nonoverlapping_blocks": 4.8,
+            "adequate_independent_block_support": false,
+            "formal_significance_or_generalization_claim": false,
+            "warning": "few_effective_time_blocks; interval_is_descriptive_and_may_be_unstable"
+          }
+        }
+      }
+    }
+  },
+  "timing": {
+    "hardware": "M3 Max, 36 GiB, MPS",
+    "formal_training_and_evaluation_seconds": 16131.435378,
+    "study_wall_seconds": 19629.820599208993,
+    "dataset_generation_excluded": true
+  },
+  "source_artifact_hashes": {
+    "artifacts/reports/ablation240_20261021/ablation_comparison.json": "84b6151f583e87d131a0afb117573e60259bc382b806cd58b61c9f869af32b08",
+    "artifacts/reports/mechanism80_holdout_20261021/comparison.json": "e41159a5afd3df4543b183163f964a574207f892e5d6c009f157d93cf36aa7ea",
+    "artifacts/runs/study240_20261021/study_status.json": "dacdd097f0c5aa95d7afa4c4d00aeac06c4013058690278424a4945f66257f6f",
+    "artifacts/runs/study240_20261021/ablation240/experiment_manifest.json": "2a0a128019493772bf145d82adc8f55377a562302a4b225442fa1f60dec38892"
+  },
+  "raw_data_or_per_row_predictions_included": false,
+  "qualified": false,
+  "promoted": false
+}

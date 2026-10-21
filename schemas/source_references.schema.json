@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Explicit read-only source references",
+  "type": "object",
+  "required": ["schema", "read_only", "source_app", "raw_db", "kronos_root", "raw_db_identity", "code", "calendar", "assets"],
+  "properties": {
+    "schema": {"const": "distillation_source_references_v1"},
+    "read_only": {"const": true},
+    "source_app": {"type": "string"},
+    "raw_db": {"type": "string"},
+    "kronos_root": {"type": "string"},
+    "raw_db_identity": {"type": "object", "properties": {"kind": {"const": "file_stat_not_content_hash"}}},
+    "code": {"type": "object"},
+    "calendar": {"type": "object"},
+    "assets": {"type": "object"},
+    "training_started": {"const": false},
+    "models_loaded": {"const": false}
+  }
+}

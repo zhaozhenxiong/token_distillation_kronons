@@ -1,0 +1,30 @@
+{
+  "schema": "implementation_audit_v1",
+  "date": "2026-10-19",
+  "khquant_audit_session": "20261019-134115-83f5b455",
+  "scope": "analysis_only_selected_adapter_diagnostics",
+  "changed_files": [
+    "scripts/diagnose_ablation_adapters.py",
+    "tests/test_adapter_diagnostics.py"
+  ],
+  "facts": [
+    "The diagnostic refuses incomplete, duplicate or failed experiment grids.",
+    "Training summary and checkpoint hashes, config/dataset bindings, frozen base hash/path, and paired initialization/sample-order identities are verified.",
+    "Effective LoRA update norms and differences versus same-seed no-teacher checkpoints use CPU float64 low-rank Gram traces without dense B@A products.",
+    "Only frozen q/v base projection tensors are read from the safetensors file, and no base weights are persisted.",
+    "Head parameter differences are reported separately from effective backbone differences.",
+    "Different selected optimizer steps are explicitly reported as a confound; numerical backend nondeterminism and lack of predictive-utility proof remain limitations.",
+    "Bound training/runtime/model sources and existing artifacts are unchanged by this implementation."
+  ],
+  "validation": {
+    "command": "PYTHONPATH=src ../KHQuant/.venv/bin/python -m pytest -q tests/test_adapter_diagnostics.py",
+    "passed": 7,
+    "failed": 0,
+    "inputs": "synthetic CPU matrices, synthetic complete checkpoint grid, temporary safetensors",
+    "optimizer_steps": 0,
+    "GPU_used": false,
+    "database_accessed": false
+  },
+  "external_sources_modified": false,
+  "model_promoted": false
+}

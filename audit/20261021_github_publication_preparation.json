@@ -1,0 +1,29 @@
+{
+  "schema": "publication_preparation_audit_v1",
+  "date": "2026-10-21",
+  "linked_khquant_audit_session": "20261019-134115-83f5b455",
+  "scope": "source_only_github_publication_preparation",
+  "target_repository": "https://github.com/zhaozhenxiong/token_distillation_kronons",
+  "remote_initial_commit": "50b593304dc6f858da95decd851469421afc9af1",
+  "changes": [
+    "Publication README and full distillation instructions",
+    "External KHQuant and pinned official-asset requirements",
+    "Public aggregate-only 240-stock results and two figures",
+    "Retain remote MIT license and original ICT license/bytes",
+    "Allowlisted source archive with SHA-256 manifest",
+    "Synthetic-test GitHub Actions workflow"
+  ],
+  "exclusions": [
+    "raw market database and OHLCVA samples",
+    "teacher JSONL datasets",
+    "token caches",
+    "official base/tokenizer weights",
+    "checkpoints and per-row predictions",
+    "local audit files, logs and absolute personal paths"
+  ],
+  "training_or_batch_generation_started": false,
+  "external_sources_modified": false,
+  "official_weights_or_tokenizer_copied": false,
+  "model_promoted": false,
+  "publication_status": "prepared_not_yet_pushed"
+}

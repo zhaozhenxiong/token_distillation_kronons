@@ -1,0 +1,70 @@
+schema_version = "token_distillation_config_v1"
+
+# All relative paths resolve from the project directory, never the shell cwd.
+[paths]
+source_app = "../KHQuant/app"
+raw_db = "../KHQuant/app/my_strategy/data/raw/khquant_raw.db"
+kronos_root = "../KHQuant/app/my_strategy/kronos_model"
+source_python = "../KHQuant/.venv/bin/python"
+state_root = "artifacts/source_runtime"
+ict_vendor_root = "vendor/ict_trading_model"
+# Optional explicit frozen verified calendar; otherwise discover and verify it.
+# calendar_path = "../KHQuant/app/my_strategy/artifacts/runs/<run>/reports/calendar.json"
+
+[data]
+universe = "sh_sz_a_v1"
+frequency = "1d"
+context_length = 256
+horizon = 5
+features = ["open", "high", "low", "close", "volume", "amount"]
+volume_unit = "shares"
+amount_unit = "CNY"
+price_basis = "unadjusted"
+normalization_epsilon = 0.00001
+normalization_clip = 5.0
+direction_threshold = 0.005
+
+[teacher]
+schema = "khquant_window_local_w32_teacher_v1"
+structure_supervision = "pending_masked"
+continuous_loss = "huber"
+event_names = ["w_spring", "w_test", "w_sos", "w_lps", "w_upthrust", "w_sow", "w_lpsy"]
+
+[student]
+base = "Kronos-base"
+freeze_tokenizer = true
+lora_rank = 8
+lora_alpha = 16.0
+target_modules = ["q_proj", "v_proj"]
+direction_classes = 3
+
+[ict]
+enabled = true
+schema = "ict_causal_atomic_teacher_v1"
+upstream_repository = "https://github.com/carreypro/ict-trading-model"
+upstream_commit = "7162437e28b1f59a4b25ea88615ee99902c9cc75"
+swing_width = 2
+continuous_dim = 2
+event_dim = 6
+full_setup_supervision = "pending_masked"
+session_supervision = "not_available_daily_a_shares"
+
+[training]
+stage = "scaffold_only"
+execution_enabled = false
+device = "auto"
+seed = 42
+max_candidates = 6
+max_kronos_configurations = 2
+micro_batch_size = 1
+gradient_accumulation_steps = 8
+
+# These are draft retrospective research boundaries, not an unused holdout claim.
+[splits]
+status = "draft_not_frozen"
+claim = "retrospective_development_only"
+train = ["2017-01-01", "2023-12-31"]
+tune = ["2024-01-01", "2024-06-30"]
+calibration = ["2024-07-01", "2024-12-31"]
+policy = ["2025-01-01", "2025-06-30"]
+holdout = ["2025-07-01", "2026-10-16"]
