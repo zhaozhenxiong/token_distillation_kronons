@@ -2,10 +2,11 @@
 
 把 CZSC 结构量价与 ICT 因果原子事实作为离线教师，联合训练同一个 Kronos 学生。官方 tokenizer 和原始主干参数冻结，以外部 q/v LoRA 与内部任务头学习；日常推理目标是输入 OHLCVA 与日期，由学生自身输出估计。
 
-**已接通真实数据生成、蒸馏训练、检查点重载和四组多种子评估。240 股回溯消融已完成：历史教师事实重建改善，稳健的未来方向收益尚未确认。**
+**已接通真实数据生成、蒸馏训练、检查点重载和四组多种子评估。800 股活跃样本与240股回溯消融已完成；当前为 v0.2.0 研究预发布，稳健的未来方向收益尚未确认。**
 
 - [如何蒸馏：完整操作指南](docs/distillation_guide.md)
 - [外部依赖、安装和固定模型身份](docs/external_dependencies.md)
+- [800 股活跃样本结果与版本产物](docs/results_800.md)
 - [240 股消融结果与原因分析](docs/results_240.md)
 - [数据与时间契约](docs/data_contracts.md) · [实施记录](docs/implementation_status.md)
 
@@ -77,12 +78,12 @@ docs/                    操作指南、依赖、研究结果、历史设计与�
 audit/                   可公开的变更事实；本地运行清单不提交
 ```
 
-源码也包含尚未纳入本次结果验收的 800 股活跃样本扩展入口，见[说明](docs/distillation_guide.md#9-活跃样本扩展入口未作为本次发布完成结论)。历史设计文档描述当时的计划，当前能力以操作指南和实施记录为准。尚未实现优化器恢复、概率校准、交易政策拟合、walk-forward 资格验收、独立合并模型导出及自动晋升。条件 token NLL 不是自由生成价格路径或交易收益。
+800股活跃样本已完成四组×三种子训练、评估与分析，见[800股结果](docs/results_800.md)。历史设计文档描述当时的计划，当前能力以操作指南和实施记录为准。尚未实现优化器恢复、概率校准、交易政策拟合、walk-forward 资格验收、独立合并模型导出及自动晋升。条件 token NLL 不是自由生成价格路径或交易收益。
 
 ## 打包与许可证
 
 ```bash
-python scripts/package_source.py --output artifacts/publication/token_distillation_kronons-0.1.0.zip
+python scripts/package_source.py --output artifacts/publication/token_distillation_kronons-0.2.0.zip --version 0.2.0
 ```
 
 打包只读取允许清单，附逐文件 SHA-256，不生成行情或训练模型。项目沿用目标仓库的 [MIT 许可证](LICENSE)，第三方来源与发布边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

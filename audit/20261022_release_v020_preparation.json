@@ -1,0 +1,12 @@
+{
+  "schema": "research_release_preparation_v1",
+  "version": "0.2.0",
+  "date": "2026-10-22",
+  "completed_study": "active800",
+  "models_registered_locally": 12,
+  "source_only_publication": true,
+  "raw_market_data_included": false,
+  "checkpoints_publicly_distributed": false,
+  "promoted": false,
+  "result": "predictive transfer not established; student direction scores remain worse than train-frequency prior"
+}

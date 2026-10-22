@@ -120,3 +120,7 @@ PYTHONPATH=src ../KHQuant/.venv/bin/python scripts/evaluate_mechanism_controls.p
 该命令要求主study完成，并拒绝覆盖已有输出；本轮实际执行日志及最终审计记录保存了完整身份。
 
 完整结果见`artifacts/reports/ablation_20261019_v2/index.html`、`ablation_comparison.json`、`adapter_diagnostics.json`和`baseline_failure_diagnosis.json`；标准Matplotlib图位于`figures_v2/`。172项合成测试通过，1项可选JSON Schema依赖检查跳过，53项subtest通过。实际来源核验见`audit/20261019_ablation_source_postcheck.local.json`：官方权重/tokenizer、固定ICT源码、所核验KHQuant代码与日历匹配，非源码`.DS_Store`变化已记录；数据库stat未变不等于完整内容哈希证明。
+
+## 2026-10-22 v0.2.0：800股活跃样本完成
+
+800股（非科创、非北交所）完成四组×三种子消融，共333,264次优化器更新；数据、缓存、评估、分析、适配器诊断和冻结复核完成。12个tune选点适配器登记为本地v0.2.0研究版本，不替换KHQuant现任模型。未来方向收益尚未确认，详见[800股结果](results_800.md)。

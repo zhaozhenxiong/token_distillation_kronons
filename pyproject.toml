@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "token-distillation"
-version = "0.1.0"
+version = "0.2.0"
 description = "Causal offline CZSC and ICT knowledge distillation for a Kronos student"
 readme = "README.md"
 license = {file = "LICENSE"}
